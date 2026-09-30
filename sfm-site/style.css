@@ -817,7 +817,7 @@ body.is-locked { overflow: hidden; }
    the grid does on the home page. */
 
 .prose--page {
-  padding-top: calc(var(--bar-h) + 60px);
+  padding-top: calc(var(--bar-h) + 52px);
   padding-bottom: 70px;
 }
 
@@ -890,11 +890,9 @@ body.is-locked { overflow: hidden; }
 .person__link:hover { color: var(--ink); }
 
 /* --- 14. Standalone page prose --------------------------- */
-
-.prose--page {
-  padding-top: 0;
-  padding-bottom: 70px;
-}
+/* Spacing for .prose--page lives in section 12. Do not redeclare
+   padding-top here: the later rule wins and the content slides up
+   under the fixed top bar. */
 
 /* The opening paragraph sits at body size. It leads by position,
    not by being set larger than everything after it. */
