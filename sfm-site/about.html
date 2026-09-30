@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About &middot; Stories from SFM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="masthead" href="index.html">
+      <img class="masthead__logo" src="img/sofm-logo-white.png"
+           alt="School of Future Media, The University of Hong Kong">
+      <span class="masthead__tag">Stories &amp; Articles from Program Coursework</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav__link" href="articles.html">Articles</a>
+      <a class="nav__link" href="authors.html">Authors</a>
+      <a class="nav__link is-current" href="about.html" aria-current="page">About</a>
+    </nav>
+    <button class="search" type="button" id="searchOpen" aria-label="Open search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/>
+        <path d="M20 20 L16.2 16.2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<div class="modal" id="searchModal" role="dialog" aria-modal="true" aria-label="Search" hidden>
+  <button class="modal__close" type="button" id="searchClose" aria-label="Close search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+      <path d="M6 6 L18 18 M18 6 L6 18" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <div class="modal__inner">
+    <label class="modal__label" for="searchField">Search this publication</label>
+    <input class="modal__field" id="searchField" type="search" placeholder="Type and press enter" autocomplete="off">
+  </div>
+</div>
+
+<main id="main">
+
+
+  <div class="prose prose--page">
+
+    <img class="about-photo" src="img/about-eliot-hall.jpg"
+         alt="Eliot Hall and the fountain courtyard at The University of Hong Kong">
+
+    <h1 class="prose__h1">About</h1>
+
+    <p class="lede">Stories from SFM is a student publication produced by the School of Future Media at The University of Hong Kong. Everything here is reported, written, photographed and edited by students.</p>
+
+    <h2>What we publish</h2>
+
+    <p>Original reporting, mostly local. We are interested in stories that need somebody to go and look at something, ask people questions, and check what they are told. We publish features, news, and photo essays. We do not publish opinion pieces or press releases.</p>
+
+    <h2>How a story gets here</h2>
+
+    <p>Every article on this site has been through the same process. A student writes a draft. It is line edited by an instructor, who marks changes and asks questions directly on the page. The reporter answers those questions, revises, and sends it back. Nothing publishes until the questions are resolved.</p>
+
+    <p>That means the process is slow. A typical piece takes about ten days from first draft to publication. We think that is the right trade.</p>
+
+    <h2>Corrections</h2>
+
+    <p>If we get something wrong, we want to know and we will say so. Corrections are noted at the foot of the article, with the date and what changed. We do not quietly edit published work.</p>
+
+    <h2>Contact</h2>
+
+    <p>Story tips, corrections, and questions can go to the editors. Students interested in writing for the publication should speak to their instructor rather than pitching here.</p>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <img class="footer__logo" src="img/sofm-logo-white.png"
+         alt="School of Future Media, The University of Hong Kong">
+    <span class="footer__note">2026. From the Masters of Journalism Program, School of Future Media, The University of Hong Kong &middot; A student publication</span>
+    <a class="footer__top" href="#main">Back to top &uarr;</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var modal = document.getElementById('searchModal');
+  var field = document.getElementById('searchField');
+  function open()  { modal.hidden = false; document.body.classList.add('is-locked'); field.focus(); }
+  function close() { modal.hidden = true;  document.body.classList.remove('is-locked'); }
+  document.getElementById('searchOpen').addEventListener('click', open);
+  document.getElementById('searchClose').addEventListener('click', close);
+  modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
+})();
+</script>
+</body>
+</html>

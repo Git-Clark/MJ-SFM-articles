@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Articles &middot; Stories from SFM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to articles</a>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="masthead" href="index.html">
+      <img class="masthead__logo" src="img/sofm-logo-white.png"
+           alt="School of Future Media, The University of Hong Kong">
+      <span class="masthead__tag">Stories &amp; Articles from Program Coursework</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="nav__link is-current" href="articles.html" aria-current="page">Articles</a>
+      <a class="nav__link" href="authors.html">Authors</a>
+      <a class="nav__link" href="about.html">About</a>
+    </nav>
+    <button class="search" type="button" id="searchOpen" aria-label="Open search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/><path d="M20 20 L16.2 16.2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<div class="modal" id="searchModal" role="dialog" aria-modal="true" aria-label="Search" hidden>
+  <button class="modal__close" type="button" id="searchClose" aria-label="Close search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+      <path d="M6 6 L18 18 M18 6 L6 18" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <div class="modal__inner">
+    <label class="modal__label" for="searchField">Search this publication</label>
+    <input class="modal__field" id="searchField" type="search" placeholder="Type and press enter" autocomplete="off">
+  </div>
+</div>
+
+<main id="main">
+  <h1 class="visually-hidden">Articles</h1>
+
+  <div class="grid">
+
+    <a class="card" href="stories/mtr.html">
+      <img class="card__img" src="img/mtr.svg" alt="">
+      <div class="card__text">
+        <h2 class="card__title">&ldquo;Stand Still on Both Sides?&rdquo;: When a slogan meets an old habit on the MTR</h2>
+        <p class="card__meta"><time datetime="2026-03-12">Mar 12, 2026</time><span class="dot"></span>Zixuan Shang (Tina)</p>
+      </div>
+    </a>
+
+    <a class="card" href="stories/language.html">
+      <img class="card__img" src="img/language.svg" alt="">
+      <div class="card__text">
+        <h2 class="card__title">In first words: how young Hong Kongers navigate three languages at first contact</h2>
+        <p class="card__meta"><time datetime="2026-02-28">Feb 28, 2026</time><span class="dot"></span>Guo Qiushi</p>
+      </div>
+    </a>
+
+    <a class="card" href="stories/typhoon.html">
+      <img class="card__img" src="img/typhoon.svg" alt="">
+      <div class="card__text">
+        <h2 class="card__title">Hong Kong farmers face uncertain future as back-to-back typhoons destroy crops</h2>
+        <p class="card__meta"><time datetime="2025-10-02">Oct 2, 2025</time><span class="dot"></span>Zhou Yiyan</p>
+      </div>
+    </a>
+
+    <a class="card" href="stories/sleepover.html">
+      <img class="card__img" src="img/sleepover.svg" alt="">
+      <div class="card__text">
+        <h2 class="card__title">Healing in the dark: emerging adults are paying for sleepovers</h2>
+        <p class="card__meta"><time datetime="2026-01-20">Jan 20, 2026</time><span class="dot"></span>Shuoyi Chen</p>
+      </div>
+    </a>
+
+    <a class="card" href="stories/fire.html">
+      <img class="card__img" src="img/fire.svg" alt="">
+      <div class="card__text">
+        <h2 class="card__title">A river of mourners: Hong Kong gathers in tribute after Wong Fuk Court fire</h2>
+        <p class="card__meta"><time datetime="2025-11-30">Nov 30, 2025</time><span class="dot"></span>Chen Yinuo (Seren)</p>
+      </div>
+    </a>
+
+    <a class="card" href="stories/payments.html">
+      <img class="card__img" src="img/payments.svg" alt="">
+      <div class="card__text">
+        <h2 class="card__title">Hong Kong&rsquo;s small merchants hustle to keep up with digital payment trend</h2>
+        <p class="card__meta"><time datetime="2026-04-08">Apr 8, 2026</time><span class="dot"></span>Ran Huan</p>
+      </div>
+    </a>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <img class="footer__logo" src="img/sofm-logo-white.png"
+         alt="School of Future Media, The University of Hong Kong">
+    <span class="footer__note">2026. From the Masters of Journalism Program, School of Future Media, The University of Hong Kong &middot; A student publication</span>
+    <a class="footer__top" href="#main">Back to top &uarr;</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var modal = document.getElementById('searchModal');
+  var field = document.getElementById('searchField');
+  function open()  { modal.hidden = false; document.body.classList.add('is-locked'); field.focus(); }
+  function close() { modal.hidden = true;  document.body.classList.remove('is-locked'); }
+  document.getElementById('searchOpen').addEventListener('click', open);
+  document.getElementById('searchClose').addEventListener('click', close);
+  modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
+})();
+</script>
+</body>
+</html>
